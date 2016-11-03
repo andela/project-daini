@@ -46,6 +46,7 @@ Template.button.helpers({
       // these will most likely be HTML attributes
       ...attrs
     } = data;
+    console.log(data);
 
     return {
       buttonAttributes: {
