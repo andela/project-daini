@@ -49,10 +49,6 @@ Template.productGrid.onRendered(function () {
       }
     });
   }
-  // if(Reaction.Profile.takenTour()){
-   
-  // }
-  // console.log(Accounts);
 
  const currentUser = Accounts.findOne(Meteor.userId());
 
@@ -60,8 +56,7 @@ Template.productGrid.onRendered(function () {
 
   
   
-
- if(!Meteor.user() || !currentUser.takenTour){
+ if(Meteor.user().emails.length > 0 && !currentUser.takenTour){
    myintro.start();
  }
 
