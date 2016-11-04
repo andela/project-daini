@@ -5,6 +5,7 @@ import { Reaction } from "/client/api";
 import Logger from "/client/modules/logger";
 import { ReactionProduct } from "/lib/api";
 import Sortable from "sortablejs";
+import { Accounts } from "/lib/collections";
 
 /**
  * productGrid helpers
@@ -48,6 +49,29 @@ Template.productGrid.onRendered(function () {
       }
     });
   }
+  // if(Reaction.Profile.takenTour()){
+   
+  // }
+  // console.log(Accounts);
+
+ const currentUser = Accounts.findOne(Meteor.userId());
+
+ const myintro = introJs();
+
+  
+  
+
+ if(!Meteor.user() || !currentUser.takenTour){
+   myintro.start();
+ }
+
+ myintro.oncomplete(function() { 
+   Accounts.update({_id: Meteor.userId()}, {$set:{takenTour: true}}, function (error, res) {
+   });
+    
+  });
+
+  
 });
 
 Template.productGrid.events({
