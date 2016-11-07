@@ -27,4 +27,5 @@
     filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3019', endColorstr='#cf0404', GradientType=0)";
     filter: "progid:DXImageTransform.Microsoft.Shadow(direction=135, strength=2, color=ff0000)";
     box-shadow: 0 2px 5px rgba(0,0,0,.4);
+    display: none;
 }
